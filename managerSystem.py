@@ -32,11 +32,7 @@ class MSystem:
         print("保存数据成功")
         
     def find_student(self, search):
-        students = []
-        for s in self.data:        
-            if s.is_match(search):
-                students.add(s)
-        return students
+        return [s for s in self.data if s.is_match(search)]
     
     def delete_student(self, idx: int):
         self.data.pop(idx-1)
